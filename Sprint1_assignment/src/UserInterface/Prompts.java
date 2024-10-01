@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Prompts {
     public String startPrompt(){
-        return JOptionPane.showInputDialog("Ange namnet på plantan för att får reda på matmängd?");
+        return JOptionPane.showInputDialog("Ange namnet på plantan för att får reda på matmängd? \nSkriv 'q' för att avsluta programmet.");
     }
 
     public void resultPrompt(Plant plant){
@@ -16,7 +16,7 @@ public class Prompts {
     }
 
     public void errorPrompt(String message){
-        String output = "Det finns ingen " + message + ". På hotellet";
+        String output = "Det finns ingen " + message + " På hotellet";
         JOptionPane.showMessageDialog(null, output);
     }
 }

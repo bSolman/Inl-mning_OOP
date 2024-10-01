@@ -15,9 +15,9 @@ public enum PlantType{
 
     public static String getPlantType(PlantType plantType) {
         return switch (plantType) {
-            case CACTUS -> "Cactus";
-            case MEAT_EATING_PLANT -> "Köttätande växt";
-            case PALM -> "Palm";
+            case CACTUS -> "kaktus";
+            case MEAT_EATING_PLANT -> "köttätande växt";
+            case PALM -> "palm";
         };
     }
 }

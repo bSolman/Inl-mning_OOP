@@ -3,7 +3,7 @@ package plants;
 public abstract class Plant implements ConsumerInterface {
     // Här är instansvariablerna av privat art.
     // Dessa kommer du bara åt genom instansiering utav objekt.
-    // Lite trist att det inte går att instansiera abstrakta klasser.
+    // Detta så att slumpmässig manipulering skall undvikas (Inkapsling)
     private double height;
     private final String NAME;
     private final PlantType PLANT_TYPE;
@@ -15,7 +15,7 @@ public abstract class Plant implements ConsumerInterface {
     }
 
     // Nedan är getters samt en setter för instansvariablerna.
-    // Har gjort merparten till private, men getHeight finns kvar,
+    // Har gjort merparten till final så mestadels getters, men setHeight finns kvar,
     // vem vet, växten kanske växer.
     public double getHeight() {
         return height;

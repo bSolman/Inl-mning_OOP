@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramStart {
-    List<Plant> plants = new ArrayList<Plant>();
+    List<Plant> plants = new ArrayList<>();
     Prompts prompts;
     public ProgramStart() {
         initPlantsList();
@@ -29,36 +29,13 @@ public class ProgramStart {
                 Plant currentPlant = getPlant(inputName);
                 assert currentPlant != null;
                 prompts.resultPrompt(currentPlant);
-                // prompts.resultPrompt(inputName, getConsumption(inputName), PlantType.getPlantFoodType(currentPlant.getPLANT_TYPE()), PlantType.getPlantType(currentPlant.getPLANT_TYPE()));
-            } else {
+            } else if (inputName.equals("q")){
+                break;
+            }
+            else {
                 prompts.errorPrompt(inputName);
             }
         }
-    }
-
-    private double getConsumption(String inputName) {
-        int noNameFound = 0;
-        for (Plant plant: plants){
-            if (plant.getNAME().equalsIgnoreCase(inputName)){
-                return getPlantConsumption(plant);
-            }
-        }
-        return noNameFound;
-    }
-
-    private double getPlantConsumption(Plant plant) {
-        double noNameFound = 0;
-
-        // här har vi lite polymorfism. Där vi går igenom lite plantor för att se om dom
-        // är av en speciell typ av planta.
-        if (plant instanceof Palm){
-            return plant.consumption();
-        } else if (plant instanceof Cactus){
-            return plant.consumption();
-        } else if (plant instanceof MeatEatingPlant){
-            return plant.consumption();
-        }
-        return noNameFound;
     }
 
     private Plant getPlant(String inputName) {
@@ -70,6 +47,7 @@ public class ProgramStart {
         return null;
     }
 
+    // Testar så att efterfrågad växt existerar.
     private boolean testInputData(String userInput) {
         for (Plant plant : plants) {
             if (plant.getNAME().equalsIgnoreCase(userInput)){
