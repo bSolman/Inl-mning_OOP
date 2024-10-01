@@ -16,7 +16,7 @@ public abstract class Plant implements ConsumerInterface {
 
     // Nedan är getters samt en setter för instansvariablerna.
     // Har gjort merparten till final så mestadels getters, men setHeight finns kvar,
-    // vem vet, växten kanske växer.
+    // vem vet, växten kanske växer i framtiden.
     public double getHeight() {
         return height;
     }
