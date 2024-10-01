@@ -28,8 +28,7 @@ public class ProgramStart {
             if (testInputData(inputName)){
                 Plant currentPlant = getPlant(inputName);
                 assert currentPlant != null;
-                prompts.resultPrompt(currentPlant);
-                // prompts.resultPrompt(inputName, getConsumption(inputName), PlantType.getPlantFoodType(currentPlant.getPLANT_TYPE()), PlantType.getPlantType(currentPlant.getPLANT_TYPE()));
+                prompts.resultPrompt(inputName, getConsumption(inputName), PlantType.getPlantFoodType(currentPlant.getPLANT_TYPE()));
             } else {
                 prompts.errorPrompt(inputName);
             }
