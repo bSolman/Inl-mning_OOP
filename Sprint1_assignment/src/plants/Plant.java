@@ -33,6 +33,10 @@ public abstract class Plant implements ConsumerInterface {
         return PLANT_TYPE;
     }
 
+    public String getPlanTypeName(){
+        return PlantType.getPlantType(PLANT_TYPE);
+    }
+
     @Override
     public String toString() {
         return "Plant{" +
