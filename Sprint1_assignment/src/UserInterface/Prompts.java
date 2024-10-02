@@ -11,7 +11,7 @@ public class Prompts {
 
     public void resultPrompt(Plant plant){
         String output = "En " + plant.getPlanTypeName() + " med höjden " + plant.getHeight() +
-                "m. behöver matas med " + plant.consumption() + "l " + PlantType.getPlantFoodType(plant.getPLANT_TYPE()) + ".";
+                "m. behöver matas med " + plant.consumption() + "l " + plant.getPLANT_TYPE().foodType + ".";
         JOptionPane.showMessageDialog(null, output);
     }
 

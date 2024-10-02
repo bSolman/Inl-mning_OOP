@@ -29,10 +29,11 @@ public class ProgramStart {
                 Plant currentPlant = getPlant(inputName);
                 assert currentPlant != null;
                 prompts.resultPrompt(currentPlant);
+            } else if (inputName == null){
+                prompts.errorPrompt("");
             } else if (inputName.equals("q")){
                 break;
-            }
-            else {
+            } else {
                 prompts.errorPrompt(inputName);
             }
         }
